@@ -1,0 +1,32 @@
+Feature: Seach a flight via TRANSAVIA homepage
+
+Scenario: Search and Book a Flight without LogIn
+	Given User is on Transavia HomePage 
+	When Choose OutBound and InBound Locations
+	And Choose Inbound and Outbound Dates 
+	Then Click Search button
+	
+Scenario: Search and Book a Flight with wrong Flight Locations
+	Given User is on Transavia HomePage 
+	When Choose wrong OutBound and InBound Locations
+	And Choose Inbound and Outbound Dates
+	And Click the Search button 
+	Then Check the Landing Page
+	
+Scenario: Search and Book a Flight 
+	Given User is on Transavia HomePage 
+	When Choose OutBound and InBound Locations
+	And Choose Departure Date
+	And Uncheck Return on Checkbox
+	Then Click Search button
+	
+Scenario: Advanced Search
+	Given User is on Transavia HomePage 
+	When User Navigates to Advanced Search Tab and clicks it
+	Then Advanced Search Page Lands up
+	
+Scenario: Advanced Search Continues
+	Given User is on Advanced Search Page
+	When Choose OutBound and InBound Locations
+	And Enter the budget amount in MyBudget Textbox
+	Then Click Search to see the results

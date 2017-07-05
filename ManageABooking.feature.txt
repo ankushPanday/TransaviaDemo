@@ -1,0 +1,17 @@
+Feature: Manage Transavia Bookings 
+
+Scenario: Manage a Flight Booking
+	Given User is on Transavia HomePage 
+	When User clicks on Manage your Booking
+	And Clicks on View your Booking 
+	Then User lands up on View Booking and LogIn Page
+	
+Scenario: Check FlyFrom field
+	Given User is on Transavia HomePage 
+	When Check the drop down list in FROM field contains Country or city names
+	Then Check the mesage displayed after selecting the value
+	
+Scenario: Check FlyTo field
+	Given User is on Transavia HomePage 
+	When Check the drop down list in TO field contains Country or city names
+	Then Check the mesage displayed after selecting the value
